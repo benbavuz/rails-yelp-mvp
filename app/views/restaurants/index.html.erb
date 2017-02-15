@@ -1,0 +1,23 @@
+
+
+<div class="container">
+  <div class="row">
+
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://u.tfstatic.com/restaurant_photos/410/25410/169/612/5285cbbeb642a8d4ee34b86b4bfd880b.jpg');">
+        <div class="card-category"><%= restaurant.category %></div>
+        <div class="card-description">
+         <h2><%= restaurant.name %></h2>
+        </div>
+
+        <a class="card-link" href="/restaurants/<%=restaurant.id%>" ></a>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+<!-- http://www.restaurant-lemayol.fr/wp-content/uploads/2014/05/spizzico1.jpg
+https://u.tfstatic.com/restaurant_photos/410/25410/169/612/5285cbbeb642a8d4ee34b86b4bfd880b.jpg -->
+

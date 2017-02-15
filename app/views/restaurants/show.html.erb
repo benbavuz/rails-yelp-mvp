@@ -1,0 +1,32 @@
+
+
+<div class ="container">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://u.tfstatic.com/restaurant_photos/410/25410/169/612/5285cbbeb642a8d4ee34b86b4bfd880b.jpg');">
+    <div class="card-category"><%= @restaurant.category %></div>
+    <div class="card-description">
+      <h2><%= @restaurant.name %></h2>
+    </div>
+  </div>
+
+
+  <!-- Show all reviews of the restaurant -->
+    <div class = "reviews">
+      <% @restaurant.reviews.each do |review| %>
+      <div class="reviews-single">
+        <% s = review.rating %>
+        <% s.times do %>
+        <i class="fa fa-star" aria-hidden="true" style="color:#F1C40F"></i>
+        <% end %>
+        <p><%= review.content %></p>
+      <% end %>
+        </div>
+    </div>
+
+  <!-- Actions for this restaurant -->
+    <div class = "actions-restaurant">
+      <%= link_to "Write a rewiew", new_restaurant_review_path(@restaurant) %>
+    </div>
+
+</div>
+
+
